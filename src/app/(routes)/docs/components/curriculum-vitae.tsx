@@ -17,7 +17,7 @@ const CurriculumVitae = () => {
       </div>
 
       <div className="my-8 p-8 flex items-center justify-start rounded-lg border-2 border-muted text-left ">
-        <p className="text-xs text-muted-foreground">
+        <div className="text-xs text-muted-foreground">
           <span className="font-semibold text-foreground">Note:</span> You can{" "}
           <Badge
             variant="secondary"
@@ -27,7 +27,7 @@ const CurriculumVitae = () => {
           </Badge>{" "}
           to see my resume in detail starting from Profile, Experience, Skills,
           Education, etc
-        </p>
+        </div>
       </div>
       <div className="flex flex-col space-y-8 pb-12 pt-8 ">
         <div>

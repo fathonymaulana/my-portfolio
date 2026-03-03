@@ -1,11 +1,8 @@
 // src/constants/navLinks.ts
 
 export const navLinks = [
-  { name: "Docs", path: "/docs" },
+  { name: "Work", path: "/work" },
   { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Skills & Tools", path: "/skills-tools" },
-  { name: "Contacts", path: "/about/Contacts" },
 ];
 
 //link data for hamburger & footer

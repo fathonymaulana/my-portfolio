@@ -1,9 +1,10 @@
 import React from "react";
+import Container from "@/components/ui/container";
 
 const PrivacyPolicy = () => {
   return (
-    <>
-      <div className="container py-8 md:py-32 px-8 md:px-80 space-y-16 text-justify">
+    <Container>
+      <div className="py-8 md:py-32 px-8 md:px-80 space-y-16 text-justify">
         <div className="w-full text-center space-y-6">
           <p className="text-sm">Effective date: January 10, 2024</p>
           <h1 className="text-7xl tracking-tighter">Privacy Policy</h1>
@@ -104,7 +105,7 @@ const PrivacyPolicy = () => {
           <strong>fathonymaulana.vercel.app</strong>
         </div>
       </div>
-    </>
+    </Container>
   );
 };
 

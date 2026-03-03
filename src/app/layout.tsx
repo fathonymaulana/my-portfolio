@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Kalam } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/dark-mode/theme-provider";
 import Navbar from "@/components/navbar/navbar";
@@ -10,8 +10,23 @@ import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import CookieNotification from "@/components/cookie-notification/cookie-notification";
 import FloatingButton from "@/components/floating-button/floating-button";
+import FloatingNav from "@/components/floating-nav/floating-nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const kalam = Kalam({
+  weight: ["300", "400", "700"],
+  variable: "--font-custom-sans",
+  subsets: ["latin"],
+});
 
 const licenseText = `
 The MIT License (MIT)
@@ -45,14 +60,15 @@ export default function RootLayout({
 
   useEffect(() => {
     const cookieAccepted = localStorage.getItem("cookieAccepted");
-    if (!cookieAccepted) {
+    const cookieDeclined = localStorage.getItem("cookieDeclined");
+    if (!cookieAccepted && !cookieDeclined) {
       setShowCookieNotification(true);
     }
 
-    const mitButton = document.getElementById('mit-button');
+    const mitButton = document.getElementById("mit-button");
     if (mitButton) {
-      mitButton.addEventListener('click', () => {
-        const licenseElement = document.getElementById('license');
+      mitButton.addEventListener("click", () => {
+        const licenseElement = document.getElementById("license");
         if (licenseElement) {
           licenseElement.textContent = licenseText;
         }
@@ -61,8 +77,10 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased font-sans`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -72,6 +90,7 @@ export default function RootLayout({
           {showCookieNotification && <CookieNotification />}
           <Navbar />
           {children}
+          <FloatingNav />
           <FloatingButton />
           <Footer />
         </ThemeProvider>

@@ -1,17 +1,19 @@
-// src/components/Footer.tsx
+"use client";
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
-import {
-  aboutCategories,
-  docsCategories,
-  projectsCategories,
-} from "@/constant/nav-links";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 import Container from "../ui/container";
-import { Separator } from "../ui/separator";
 import Socials from "./components/socials";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Work", path: "/work" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/about/Contacts" },
+];
 
 const Footer = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,65 +28,47 @@ const Footer = () => {
 
   return (
     <Container>
-      <Separator className="mt-20" />
-      <footer className="flex flex-col gap-8 md:gap-20 relative text-left mt-20 mb-8">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-4 flex-wrap md:flex-nowrap">
-          <div className="basis-3/4 grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-4 md:gap-y-4 text-sm">
-            <ul className="flex flex-col gap-y-6 text-sm text-muted-foreground">
-              <li>Docs</li>
-              {docsCategories.map((docs) => (
-                <li key={docs.name}>
-                  <Link
-                    href={docs.path}
-                    className="text-foreground font-medium hover:opacity-80 transition"
-                  >
-                    {docs.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="flex flex-col gap-y-6 text-sm text-muted-foreground">
-              <li>About</li>
-              {aboutCategories.map((about) => (
-                <li key={about.name}>
-                  <Link
-                    href={about.path}
-                    className="text-foreground font-medium hover:opacity-80 transition"
-                  >
-                    {about.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="flex flex-col gap-y-6 text-sm text-muted-foreground">
-              <li>Projects</li>
-              {projectsCategories.map((project) => (
-                <li key={project.name}>
-                  <Link
-                    href={project.path}
-                    className="text-foreground font-medium hover:opacity-80 transition"
-                  >
-                    {project.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="w-full pt-8 md:pt-0 md:w-[280px] text-sm text-muted-foreground">
-            <div className="flex flex-col gap-6 max-w-full sm:w-[336px]">
-              <p>License</p>
-              <p className="text-foreground">
-                Licensed under the{" "}
-                <Link href="/mit" target="_blank" className="font-semibold hover:opacity-80 transition">
-                  MIT
-                </Link>{" "}
-                License.
-              </p>
+      <footer className="container w-auto flex flex-col">
+        {/* Top Half */}
+        <div className="flex flex-col md:flex-row items-start justify-between w-auto px-6 md:px-8 pt-8 md:pt-16 pb-8 md:pb-8">
+          {/* Brand / Logo */}
+          <div className="flex flex-col items-center justify-center w-full gap-6">
+            <Link href="/" className="flex flex-col items-center group w-fit">
+              <Image
+                src="/images/logo/Logo.svg"
+                alt="Logo"
+                width={100}
+                height={100}
+                className="dark:invert-0 transition-transform duration-300 group-hover:scale-110"
+              />
+              <span className="text-xl font-custom-sans font-semibold tracking-tight text-foreground">
+                Fathony Maulana
+              </span>
+            </Link>
+            <p className="text-muted-foreground text-sm font-medium leading-relaxed max-w-md text-center">
+              Crafting intuitive digital experiences and pushing the boundaries
+              of modern UI/UX design. Based in Indonesia, working globally.
+            </p>
+            <div className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+              Licensed under the{" "}
+              <Link
+                href="/mit"
+                className="font-bold text-foreground hover:underline underline-offset-4"
+              >
+                MIT License
+              </Link>
+              .
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>fm/portfolio &copy; 2022-2024</span>
+
+        {/* Bottom Half */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-border px-6 md:px-8 py-4 md:py-8">
+          <div className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+            <span>&copy; {new Date().getFullYear()} fm/portfolio.</span>
+            <span>All rights reserved.</span>
+          </div>
+
           <Socials />
         </div>
       </footer>

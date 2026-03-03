@@ -1,56 +1,87 @@
 "use client";
 
 import { FC } from "react";
-import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 const Education: FC = () => {
   return (
     <>
-      <div className="space-y-8">
-        <h1 className="scroll-m-20 text-3xl font-bold tracking-tight">
-          Education
-        </h1>
-        <p>
-          Bachelor of Information Systems, Gunadarma University (2014-2019)
-          During my studies, I actively participated in various self-development
-          activities such as web & desktop app development workshops. This enabled me
-          to hone my skills in HTML, CSS, JavaScript, React.
-        </p>
-        <Separator />
-        <div>
-          <div className="flex items-center gap-4">
+      <div className="px-8 md:px-12 py-8 md:py-24 border-b border-border">
+        <div className="px-0 md:px-8">
+          <div className="flex items-start flex-col md:flex-row gap-8">
             <Image
               src="/images/logo/gunadarma.png"
-              alt="logo"
-              width={55}
-              height={55}
-              loading="lazy"
-              className="object-cover w-10"
+              alt="Education"
+              width={500}
+              height={500}
+              priority
+              className="w-full h-auto object-contain max-w-[56px]"
             />
-            <h2 className="text-2xl font-semibold tracking-tighter">
-              University of Gunadarma
-            </h2>
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-2">
+                <h3>Gunadarma University</h3>
+                <p className="Small">Bachelor’s degree, Information System</p>
+                <p className="Smaller">2014 - 2019</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4>Overview:</h4>
+                <p className="tableItem">
+                  A highly motivated and detail-oriented information systems
+                  graduate with a passion for leveraging technology to solve
+                  complex problems. Experienced in software development,
+                  database management, and network administration. Seeking a
+                  challenging position where I can apply my skills and
+                  contribute to the success of a dynamic organization.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4>Expertise:</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li className="itemList">
+                    Change management, release notes, new feature development,
+                    performance improvements, troubleshooting, knowledge base
+                    articles, and transparent communication.
+                  </li>
+                  <li className="itemList">
+                    Fluid transitions and carefully considered visual elements
+                    that are simple to adapt and expand.
+                  </li>
+                  <li className="itemList">
+                    Developed using React and Express.js, providing excellent
+                    speed and adaptability for modern web applications.
+                  </li>
+                  <li className="itemList">
+                    Works seamlessly with Bootstrap 5+, utilizing the newest
+                    features and design principles.
+                  </li>
+                  <li className="itemList">
+                    Created with Material UI components, delivering ready-to-use
+                    UI elements that adhere to industry standards.
+                  </li>
+                  <li className="itemList">
+                    Receive comprehensive Sketch UI files for each layout, ideal
+                    for personalized design adjustments.
+                  </li>
+                  <li className="itemList">
+                    Easily toggle between light and dark modes with personalized
+                    theme options.
+                  </li>
+                  <li className="itemList">
+                    Built with a mobile-first strategy, guaranteeing consistent
+                    experiences on all device sizes.
+                  </li>
+                  <li className="itemList">
+                    Enhanced for speed, user experience, and search engine
+                    optimization, boosting site ranking and load times.
+                  </li>
+                  <li className="itemList">
+                    Access dependable and prompt assistance from our support
+                    team for help with setup and customization.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="text-sm mt-4">
-            <p className="font-semibold">Bachelor of Information System</p>
-            <p className="text-muted-foreground">
-              Faculty of Computer Science & Information Technology
-            </p>
-          </div>
-          <Separator className="mt-4" />
-          <div className="flex items-center gap-4 mt-4 text-muted-foreground text-sm">
-            <small>(2014 - 2019)</small>
-            <span className="text-muted">|</span>
-            <small>Indonesia</small>
-          </div>
-          <ul className="list-disc ml-4 py-4 text-sm text-muted-foreground">
-            <li>Focus on software engineering and web development.</li>
-            <li>
-              Completed a final project involving the creation of a task
-              management web application.
-            </li>
-          </ul>
         </div>
       </div>
     </>

@@ -11,6 +11,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
+    --primary-light: 222.2 47.4% 11.2%;
+    --primary-dark: 210 40% 98%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -29,6 +31,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --primary-curve: cubic-bezier(0.62, 0.05, 0.01, 0.99);
   }
 
   .dark {
@@ -78,5 +81,109 @@
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Custom Typography Standard Tags */
+  h1 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.012em;
+  }
+  h2 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.0075em;
+  }
+  h3 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.006em;
+  }
+  h4 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.005em;
+  }
+  p {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.012em;
+  }
+  blockquote {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.012em;
+  }
+}
+
+@layer components {
+  /* Custom Typography Utility Classes */
+  .tableHead {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.012em;
+  }
+  .tableItem {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.012em;
+  }
+  .list {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.012em;
+  }
+  .inlineCode {
+    font-family: var(--font-geist-mono), monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.012em;
+  }
+  .Lead {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0em;
+  }
+  .Large {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0em;
+  }
+  .Small {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0em;
+  }
+  .Smaller {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0em;
   }
 }

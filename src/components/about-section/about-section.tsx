@@ -1,43 +1,72 @@
-import Socials from "@/app/(routes)/about/components/socials";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+"use client";
 
-const AboutSection = () => {
+import React from "react";
+import Image from "next/image";
+
+const AboutSection: React.FC = () => {
   return (
-    <>
-      <div id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-between gap-4">
-          <Badge className="w-fit">About Me</Badge>
-          <Socials />
-        </div>
-        <div className="flex flex-col gap-4 text-justify leading-tight">
-          <p className="font-semibold">
-            Hello! I&apos;m Fathony Maulana, a passionate frontend developer
-            with 2 years of experience in building responsive and interactive
-            web applications. My journey in web development started with a
-            curiosity about how websites work and has grown into a fulfilling
-            career.
+    <section
+      id="about"
+      className="px-6 md:px-32 flex flex-col items-center justify-center w-full border-b border-border"
+    >
+      {/* Header */}
+      <div className="px-6 md:px-24 py-14 flex flex-col gap-4 md:gap-12 items-start space-y-4 max-w-4xl w-full border-x border-border text-center">
+        <span className="italic underline decoration-muted-foreground underline-offset-4 text-foreground text-sm font-medium font-custom-sans text-center w-full">
+          Who am I?
+        </span>
+
+        <div className="flex flex-col gap-8 text-foreground text-sm md:text-base leading-relaxed text-left max-w-3xl font-medium">
+          <p className="text-justify">
+            Hello! I&apos;m <span className="font-bold">Fathony Maulana</span>,
+            a <span className="font-bold">UI/UX Designer</span> and{" "}
+            <span className="font-bold">Web Developer</span> from{" "}
+            <span className="font-bold">
+              Padalarang, Bandung Barat, Indonesia
+            </span>
+            , born on May 12, 1996. My expertise includes frontend development
+            and creating user-centered designs.
           </p>
-          <p className="text-muted-foreground text-sm mb-10">
-            With a passion for technology and a focus on web design and Web
-            development, I create beautiful digital experiences that drive value
-            for my clients and their customers. I believe in taking a
-            collaborative approach to my work and I work closely with my clients
-            to ensure that every project meets their unique needs and exceeds
-            their expectations.
+
+          <p className="text-justify">
+            I&apos;m passionate about crafting intuitive interfaces that offer
+            engaging experiences. I&apos;m fulfilled when a project succeeds,
+            knowing my contributions played a key role.
           </p>
-          <Link href="/about" className="w-full">
-            <Button className="w-full flex items-center gap-1">
-              <SquareArrowOutUpRight width={14} height={14} />
-              Read More
-            </Button>
-          </Link>
+
+          <p className="text-justify">
+            I&apos;ve worked as a{" "}
+            <span className="font-bold">UI/UX Designer since 2022</span>. I use
+            tools like <span className="font-bold">Figma</span> and{" "}
+            <span className="font-bold">Visual Studio Code</span>, with a tech
+            stack that includes{" "}
+            <span className="font-bold">
+              MongoDB, Express.JS, React.JS, Node.JS, Next.js, Tailwind CSS
+            </span>
+            , and <span className="font-bold">Shadcn/UI</span>. Let&apos;s
+            collaborate and bring your digital vision to life.
+          </p>
+
+          <div className="flex items-center gap-3 mt-4">
+            <Image
+              src="/images/avatar/Avatar.png"
+              alt="Fathony Maulana"
+              width={200}
+              height={200}
+              quality={100}
+              className="w-12 h-12 rounded-full bg-muted object-cover border border-border"
+            />
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold text-foreground">
+                Fathony Maulana
+              </span>
+              <span className="text-xs text-muted-foreground">
+                UI/UX Designer @ediflysolusiindonesia
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -5,12 +5,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  DiscordLogoIcon,
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  LinkedInLogoIcon,
-} from "@radix-ui/react-icons";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import React from "react";
 
@@ -41,19 +37,9 @@ const Socials: React.FC = () => {
   return (
     <div className="flex items-center">
       <SocialLink
-        href="https://www.instagram.com/fathonymaulana/"
-        icon={<InstagramLogoIcon width={18} height={18} />}
-        label="Instagram"
-      />
-      <SocialLink
-        href="https://github.com/fathonymaulana?tab=repositories"
-        icon={<GitHubLogoIcon width={18} height={18} />}
-        label="Github"
-      />
-      <SocialLink
-        href="https://Discordapp.com/users/368839388353921024"
-        icon={<DiscordLogoIcon width={18} height={18} />}
-        label="Discord"
+        href="https://x.com/maulanafathony"
+        icon={<FaXTwitter size={16} />}
+        label="X (Twitter)"
       />
       <SocialLink
         href="https://www.linkedin.com/in/fathony-maulana-96a2a71ba/"
