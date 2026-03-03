@@ -80,7 +80,7 @@ const Course: FC = () => {
             <div className="w-full flex flex-col gap-2">
               <h3>Certificate</h3>
               <Image
-                src="/images/certificates/certificate.webp"
+                src="/images/certificates/Certificate.webp"
                 alt="Education"
                 width={500}
                 height={500}
