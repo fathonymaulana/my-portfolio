@@ -20,7 +20,7 @@ const AnimatedCounter = ({
     if (isInView && ref.current) {
       const controls = animate(0, to, {
         duration: 2,
-        ease: primaryCurve,
+        ease: primaryCurve as any,
         onUpdate: (value) => {
           if (ref.current) {
             ref.current.textContent = Math.round(value).toString() + suffix;
