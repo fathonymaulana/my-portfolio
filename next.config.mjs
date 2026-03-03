@@ -1,13 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["aceternity.com", "cdn.freebiesupply.com", "images.prismic.io"],
     qualities: [75, 100],
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "aceternity.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.freebiesupply.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.prismic.io",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
-        pathname: "/**",
       },
     ],
   },
